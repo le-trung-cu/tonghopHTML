@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<!-- Phần tử <html>. Phần tử này bao bọc tất cả nội dung trên toàn bộ trang và đôi khi được gọi là phần tử gốc. -->
+<!-- Bạn có thể (và thực sự nên) đặt ngôn ngữ cho trang của mình. Điều này có thể được thực hiện bằng cách thêm thuộc tính lang vào thẻ HTML mở Điều này rất hữu ích theo nhiều cách. Tài liệu HTML của bạn sẽ được các công cụ tìm kiếm lập chỉ mục hiệu quả hơn nếu ngôn ngữ của nó được đặt (ví dụ: cho phép nó xuất hiện chính xác trong các kết quả dành riêng cho ngôn ngữ) và rất hữu ích cho những người khiếm thị sử dụng trình đọc màn hình (ví dụ: từ "six" tồn tại trong cả tiếng Pháp và tiếng Anh, nhưng được phát âm khác nhau.) -->
+<!-- Bạn cũng có thể đặt các phần phụ của tài liệu của mình để được công nhận là các ngôn ngữ khác nhau. Ví dụ: chúng tôi có thể đặt phần tiếng Nhật của mình được công nhận là tiếng Nhật, như vậy: -->
+<html lang="en">
+
+<!-- Phần tử <head>. Phần tử này hoạt động như một thùng chứa cho tất cả nội dung bạn muốn đưa vào trang HTML không phải là nội dung bạn đang hiển thị cho người xem trang của bạn. Điều này bao gồm những thứ như từ khóa và mô tả trang mà bạn muốn xuất hiện trong kết quả tìm kiếm, CSS để định kiểu nội dung của chúng tôi, khai báo bộ ký tự và hơn thế nữa. Bạn sẽ tìm hiểu thêm về điều này trong bài viết tiếp theo trong loạt bài. -->
+
+<head>
+    <!-- khai báo cho trình duyệt biết trang được viết bằng bảng mã ký tự UTF-8.
+    để đảm bảo trình duyệt mã hóa chính xác. Thẻ này phải xuất hiện trước 512 ký đầu, và nên xuất hiện trước bất kỳ yếu tố khác.-->
+    <meta charset="UTF-8">
+
+    <!-- Viewport chỉ được sử dụng trên thiết bị di động. viewport là kích thước của cửa sổ trang web của bạn sẽ hiển thị. Trong thiết kế đáp ứng, kích thước chúng ta muốn là bất kỳ kích thước nào của màn hình thiết bị. Bằng cách khai báo chế độ xem, trang web của bạn có thể hiển thị chính xác trên mọi thiết bị. Google khuyến nghị 1 thẻ meta chế độ xem sau cho trang web phản hồi. -->
+    <!-- initial-scale Một số dương giữa 0.0 và 10. Xác định tỷ lệ giữa chiều rộng của thiết bị ( device-width ở chế độ dọc hoặc device-height   ở chế độ ngang) và kích thước khung nhìn. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- không quá 70 ký tự !!!   Cái này đặt tiêu đề của trang của bạn, đó là tiêu đề xuất hiện trong tab trình duyệt mà trang được tải vào và được sử dụng để mô tả trang khi bạn đánh dấu / yêu thích nó. -->
+    <title>Document</title>
+
+    <!--nên dài từ 150 -> 160 ký tự!!!  tóm tắt ngắn gọn và mô tả về nội dung của trang web, nó có khả năng làm cho trang của bạn xuất hiện cao hơn trong các tìm kiếm có liên quan được thực hiện trong các công cụ tìm kiếm -->
+    <meta name="description" content="một trang lộn xộn về html">
+
+    <!-- Chỉ định một tác giả là hữu ích theo một số cách: rất hữu ích để có thể tìm ra ai đã viết trang, nếu bạn muốn liên hệ với họ với các câu hỏi về nội dung. Một số hệ thống quản lý nội dung có các phương tiện để tự động trích xuất thông tin tác giả trang và cung cấp cho các mục đích đó. -->
+    <meta name="author" content="lê trung cư">
+
+    <!-- @**tính năng không được sử dụng nữa -->
+    <meta name="keywords" content="fill, in, your, keywords, here">
+
+
+    <!--S các thuộc tính liên quang đến tối ưu hóa tải tài nguyên ngoài-->
+
+    <!-- là một lệnh cho trình duyệt tìm nạp tài nguyên có thể sẽ cần cho điều hướng tiếp theo. Điều này có nghĩa là tài nguyên sẽ được tìm nạp với mức độ ưu tiên cực kỳ thấp -->
+    <link rel="prefetch" href="tài nguyên có thể sẽ cần cho điều hướng tiếp theo">
+
+    * không chặn sự kiện onload của Window
+    * thuộc tính as:
+		+ trình duyệt có thể thiết lập các ưu tiên đúng, 
+		sẽ không trì hoãn các tài nguyên quan trọng hơn, và không bị ảnh
+    hưởng bởi tài nguyên ít quan trọng.
+    + Phù hợp với các yêu cầu trong tương lai, sử dụng lại cùng một tài nguyên nếu thích hợp.
+    + Áp dụng chính sách bảo mật nội dung chính xác cho tài nguyên.
+    + Trình duyệt có thể gửi các Accept tiêu đề phù hợp dựa trên loại tài nguyên.
+    * value: audio, document, embed, fetch, font, image, object, script, style, track, worker, video
+    <link rel="preload" href="">
+
+    Bạn phải thêm một crossorigin thuộc tính khi tìm nạp phông chữ, vì chúng được tìm nạp bằng chế độ ẩn danh CORS .
+    Ngay cả khi phông chữ của bạn có cùng nguồn gốc với trang.
+    <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="bg-image-narrow.png" as="image" media="(max-width: 600px)">
+    <link rel="preload" href="bg-image-wide.png" as="image" media="(min-width: 601px)">
+
+		NoState Prefetch sẽ được kích hoạt khi
+		 a) người dùng không ở trên thiết bị cấp thấp và
+		b) người dùng không ở trên mạng di động.
+    sử dụng để:
+    + Thực hiện prerendergợi ý tài nguyên
+    +Lấy kết quả đầu tiên trong kết quả Tìm kiếm của Google
+    + Tìm nạp các trang mà thanh địa chỉ Chrome dự đoán có thể sẽ được truy cập tiếp theo
+    <link rel="prerender" href="###https://developers.google.com/web/updates/2018/07/nostate-prefetch">
+    <!--E các thuộc tính liên quang đến tối ưu hóa tải tài nguyên ngoài-->
+
+    <!-- Khi một trang web đang sử dụng các url khác nhau cho người dùng di động so với người dùng máy tính để bàn, nhiều điều có thể sai khi SEO. Google sẽ không tự động phát hiện ra rằng các trang di động của bạn là các phiên bản khác nhau của các trang trên máy tính để bàn của bạn và vì điều này, chúng tôi phải cho Google biết những gì đang xảy ra.Cách chúng tôi nói với Google về các url riêng biệt của chúng tôi đòi hỏi một số công việc. -->
+    <!-- Desktop page -->
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.example.com/page-1">
+    <!-- Mobile page -->
+    <link rel="canonical" href="http://www.example.com/page-1">
+    <!-- Trang máy tính để bàn có mã rel = "alternate" ở trên cho Google biết rằng nếu màn hình nhỏ hơn 640 px thì nên tham khảo trang di động thay thế. Trang di động có mã rel = canonical ở trên cho phép Google biết rằng trang đó là phiên bản của trang máy tính để bàn được liệt kê. -->
+
+
+    <!-- Hai liên kết được tạo bởi phần tử này là một liên kết có ngữ nghĩa là trang đích có thông tin về tác giả của trang hiện tại và một liên kết có ngữ nghĩa là trang đích có thông tin về giấy phép mà trang hiện tại được cung cấp.
+        tạo hai siêu liên kết (đến cùng một trang): -->
+    <link rel="author license" href="/about">
+
+    <!-- icon định dạng .ico(Internet Explorer 6.)  (hầu hết các trình duyệt sẽ hỗ trợ favicon trong các định dạng phổ biến hơn như .gif hay .png, ) -->
+    <!-- TYPE Đối với các liên kết tài nguyên bên ngoài , typethuộc tính được sử dụng làm gợi ý cho tác nhân người dùng để họ có thể tránh tìm nạp tài nguyên mà họ không hỗ trợ. -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+    <!-- iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+    <!-- first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+        href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+    <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed"
+        href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+    <!-- basic favicon -->
+    <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+    <!-- Note: If your site uses a Content Security Policy (CSP) to enhance its security, the policy applies to the favicon. If you encounter problems with the favicon not loading, verify that the Content-Security-Policy header's img-src directive is not preventing access to it. -->
+
+
+
+
+
+		<!-- Open Graph Data là một giao thức siêu dữ liệu mà 
+			Facebook đã phát minh ra để cung cấp siêu dữ liệu phong
+			 phú hơn cho các trang web. Trong mã nguồn MDN Web Docs,
+			  bạn sẽ tìm thấy điều này: -->
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:description" content="một trang lộn xộn về html">
+    <meta property="og:title" content="Document">
+    <!-- End Open Graph Data  -->
+
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section:nth-child(even) {
+            background: rgb(212, 222, 228);
+        }
+
+        section article:nth-child(2n+1) {
+            background: rgb(98, 145, 233);
+        }
+
+        p {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<!-- Phần tử <body>. Nội dung này chứa tất cả nội dung mà bạn muốn hiển thị cho người dùng web khi họ truy cập trang của bạn, cho dù đó là văn bản, hình ảnh, video, trò chơi, bản nhạc âm thanh có thể phát hay bất cứ thứ gì khác. -->
+
+<body>
+    <section id="layout-tag">
+        ví dụ cho phần này tại: <a href="/example/Page-Structure.html">example/Page-Structure.html</a>
+        <h2>Nhóm thẻ layout</h2>
+        <header role="banner">
+            + Xác định tiêu đề của một đoạn nội dung, một trang có thể có nhiều thẻ header. một header có thể được dùng
+            để
+            + chỉ định vùng chứa thông tin trang, như logo, chức năng tìm kiếm, chức năng điều hướng(nav có thể nằm
+            trong hoặc ngoài header).
+            + nếu header nằm trong một section hoặc một article thì header chỉ chỉ định cho section hoặc article cụ thể
+            đó.
+        </header>
+        <nav role="navigation">
+            + Xác định một nhóm các liên kết điều hướng của trang hoặc liên kết đến các phần của trang hiện tại & thường
+            được để tạo một thanh menu.
+            + Có thể dùng nhiều thẻ nav trên một trang, khi đó sử dụng Labeling Regions để phân biệt các vùng cùng tag
+            name (ví dụ "main-navigation" và "sub-navigation"):
+            cách 1:
+            <nav aria-labelledby="regionheading">
+                <h3 id="regionheading">Main Navigation</h3>
+                …
+            </nav>
+            cách 2:
+            <nav aria-label="Main Navigation">
+                …
+            </nav>
+
+        </nav>
+        <section>
+            <header>
+                <!--header chứa nội dung giới thiệu và điều hướng cho section-->
+                <h2>sử dụng thẻ section</h2>
+                <nav>điều hướng</nav>
+            </header>
+            <p>
+                + section thể hiện một phần chung chung của tài liệu hoặc ứng dụng.
+                + section chứa một nhóm theo chủ đề.
+                + section thường có một tiêu đề (nếu không thể mô tả ngắn gọn tất cả các nội dung trong một section bằng
+                một heading ngắn ngọn thì không nên nhóm các nội dung đó và một section).
+                + một section có thể được lồng bên trong một section/article khác.
+                + một vài ví dụ:
+                + sử dụng section để phân đoạn các nội dung khác nhau trên một trang.
+                + sử dụng section để phân đoạn các nội dung khác nhau của một điểu khoảng dịch vụ dài.
+                + sử dụng section để nhóm các article (bài viết) có cùng chủ đề (thể thao, giải trí, văn hóa...);
+                + section lồng trong một section: trong section thể thao thì có section thể trong trong nước và section
+                thể thao quốc tế.
+            </p>
+        </section>
+
+        <article>
+            <header>
+                <h2>sử dụng thẻ article</h2>
+                <nav>điều hướng</nav>
+            </header>
+            <p>
+                + Phần tử article đại diện cho một thành phần hoàn chỉnh, độc lập hoặc khép kín trong tài liệu, ứng
+                dụng, hoặc trang web.
+                + nội dung của article có thể :
+                + xuất hiện trên một trang web khác mà không bị sửa đổi.
+                + pushed (thông báo) dưới dạng cập nhật qua RSS hoặc trên các mạng xã hội.
+                + một article có thể được lồng bên trong một section/article khác.
+                + một vài ví dụ:
+                + một bài báo, tập chí được bọc bởi thẻ article.
+                + một bài viết của blog.
+                + một bình luận.
+            </p>
+        </article>
+
+        <main role="main">
+            <h2>Sử dụng thẻ main</h2>
+            <p>
+                + được dùng để wrap nội dung chính của một trang.
+                + nên đi kèm với ARIA role="main" để tăng khả năng truy cập
+                + chỉ có 1 thẻ main trong trang.
+            </p>
+
+
+        </main>
+        <aside>
+            <h3>aside những bài viết liên quang</h3>
+            <p>
+                * Xác định nội dung có liên quan đến:
+                + một phần nội dung độc lập (một bài article, một section).
+                + toàn bộ trang hoặc document.
+                * Không dùng aside để wrap các thành phần của nội dung chính.
+                * aside luôn là một phần của một tổng thể lớn hơn.
+                * aside không nhất thiết phải nằm bên cạnh, nhưng nó luôn nằm trong nội dung mà nó liên quan.
+                * một vài ví dụ:
+                + làm sidebar,
+                + một danh sách các liên kết phụ (liên kết đến các phần trong trang).
+                + để đặc quảng cáo.
+            </p>
+        </aside>
+        <footer role="contentinfo">
+            <h2>sử dụng thẻ footer</h2>
+            + footer đại diện cho chân trang (footer) cho một khối nội dung của tổ tiên gần nhất của nó (tổ tiên có thể
+            là một section, article, aside).
+            + có thể có nhiều yếu tố footer trên một trang.
+            + footer thường chứa thông tin bản quyền, tác giả, danh sách các liên kết liên quan.
+            + footer thường (nhưng không nhất thiết) suất hiện ở cuối của một khối nội dung.
+            + ví dụ thông tin về tác giả bài viết được wrap trong footer. trong trường hợp này footer đại diện cho chân
+            trang của article, footer này có thể được đặt trước phần nội dung bài viết.
+        </footer>
+
+        đặt một vài hình ảnh áp dụng các quy tắc trên để bố trí layout.
+    </section>
+
+
+    <h4>********************************************************************************************</h4>
+    <section id="phân loại nhóm thẻ">
+        <h2>phân loại nhóm thẻ</h2>
+        <p>
+            * Metadata content: là các thẻ title, link, meta, style.
+            + được sử dụng trong phần head (ngoại trừ style có thể ở trong body)
+            + ảnh hưởng đến việc trình bày của trang.
+            + và chứa các thông tin khác về trang.
+        </p>
+        <p>
+            * Flow content: là hầu hết các thẻ được dùng bên trong thẻ body.
+        </p>
+        <p>
+            * Section content: là các thẻ article, aside, nav, and section.
+            + chúng là các phần tử có thể chứa một heading, footer, or aside.
+        </p>
+        <p>
+            * Heading content: là các thẻ h1, h2, h3, h4, h5, h6.
+            + xác định tiêu đề của Section content
+        </p>
+        <p>
+            * Phrasing content: là các thẻ inline content.
+            + ví dụ: em, strong, cite...
+        </p>
+        <p>
+            * Embedded content: img, object, embed, video, canvas, iframe.
+            + được dùng để nhúng các yếu
+        </p>
+        <p>
+            * Interactive content: bao gồm các yếu tố mà người dùng có thể tương tác.
+        </p>
+    </section>
+
+    <h4>///////////////////////////////////////////////////////////////////////////////////////////</h4>
+
+    <section id="html5-tag">
+        <figure-TAG id="figure và figcaption">
+            <h3>Thẻ figure và figcaption</h3>
+            <p>
+                + figure: có thể được dùng để chú thích minh họa, sơ đồ, hình ảnh, và mã... Nội dung có đi kèm với một
+                chú thích.
+                + nội dung xuất hiên bên trong figure phải liên quan đến nội dung xung quanh thẻ figure.
+                + nếu có thể xóa thẻ figure hiện tại mà nội dung xung quanh nó vẫn có thể được hiểu một cách đầy đủ thì
+                không nên sử dụng figure (nhưng vẫn có thể sử dụng nó), có thể dùng aside để thay thế.
+            </p>
+            <figcaption>
+                <p>
+                    + figcaption: dùng để <mark>sss</mark> chú thích nội dung xuất hiện bên trong figure.
+                    + figcaption là con của figure.
+                    + figcaption có thể đặt trước hoặc sau phần nội dung của figure.
+                </p>
+            </figcaption>
+            ví dụ sử dụng:
+            <section>
+                <h1>Tại sao con người không thể đứng lâu bằng 1 chân, mà hồng hạc đứng mãi cũng không bao giờ mỏi?</h1>
+                <p>
+                    Hồng hạc xứng đáng được mệnh danh là "người mẫu" lý tưởng của giới động vật. Chúng cao, gầy, khoác
+                    lên người màu sắc đầy rực rỡ và tất nhiên là luôn biết cách tạo dáng rất ăn ảnh và nịnh mắt.
+
+                    Giờ đây, các nhà khoa học cho rằng họ đã tìm ra câu trả lời cho thắc mắc kéo dài bấy lâu nay về việc
+                    tại sao và làm thế nào những con chim màu hồng quyến rũ này lại có thể sở hữu một dáng đứng 1 chân
+                    đầu đặc trưng đến vậy: Hóa ra chúng có khả năng tiết kiệm năng lượng và sức lực hiệu quả hơn nhờ
+                    đứng bằng 1 chân thay vì 2 chân.</p>
+                <figure>
+                    <img src="/img/flamingo1x.jpg" alt="">
+                    <figcaption>Một con hồng hạc Caribbe (Phoenicopterus ruber)</figcaption>
+                </figure>
+            </section>
+
+        </figure-TAG>
+
+
+
+        <mark id="thẻ đánh dấu mark">
+            <h3>thẻ mark</h3>
+            <p>
+                * mark: là đại diện một đoạn văn bảng được đánh dấu, tô sáng.
+                * được dùng để:
+                + thu hút sự chú ý bên trong một quote hoặc.
+                + để tô sáng văn bản liên quan đến hoạt động hiện tại của người dùng như trong kết quả tìm kiếm.
+                + nó chỉ nhằm mục đính tăng sự chú ý của người dùng hiện tại. không liên quan đến SEO.
+            </p>
+        </mark>
+
+        <progress-TAG>
+            <h3>thẻ progress</h3>
+            <progress></progress>
+            <p>
+                progress: mô tả trạng thái hiện tại của một quá trình thay đổi mà hướng tới hoàn thành, bất kể trạng
+                thái hoàn thành có được xác định hay không.
+            </p>
+        </progress-TAG>
+
+        <meter-TAG>
+            <h3>thẻ meter</h3>
+            <meter value="40" min="0" max="320" low="50" high="80"></meter>
+            <p>
+                meter: đại diện cho một phần tử có phạm vi được biết đến, nghĩa là nó có các giá trị tối thiểu và tối đa
+                xác định.
+            </p>
+        </meter-TAG>
+
+        <time-TAG>
+            <h3>thẻ time</h3>
+            <p>
+                * time: giúp công cụ tìm kiếm có thể đọc hiểu thời gian chính xác.
+                <time datetime="YYYY-MM-DD"></time> hoặc <time>YYYY-MM-DD</time>
+
+                <!-- tháng -->
+                <time>YYYY-11</time>
+                <!-- ngày -->
+                <time>MM-DD</time>
+                <!-- giờ -->
+                <time>HH:MM:SS</time>
+                <!-- floating date and time -->
+                <time>YYYY-MM-DDTHH:MM:SS</time>
+                <!-- time-zone offset -->
+                <time>-0800</time>
+                <!-- global date and time -->
+                <time>2015-11-12T06:54:39.929-0800</time>
+                <!-- week -->
+                <time>2015-W46</time>
+                <!-- duration -->
+                <time>4h 18m 3s</time>
+            </p>
+        </time-TAG>
+
+        <a-TAG>
+            <h3>Thẻ a</h3>
+            <p>
+                a: trong HTLM5 thẻ a có thể wrap hầu hết các phần tử.
+            </p>
+        </a-TAG>
+
+        <b-TAG>
+            <h3>Thẻ b </h3>
+            <p>
+                * b: in đậm văn bản, trong HTLM5 thẻ b không làm tăng ngữ nghĩa(không ảnh hưởng SEO)
+                * dùng để thu hút sự chú ý của người dùng đến những đoạn văn (các từ).
+                * nó khác với thẻ mark (để tô sáng văn bản liên quan đến hoạt động hiện tại của người dùng như trong kết
+                quả tìm kiếm).
+                * ví dụ dùng để in đậm tên sản phẩm trong bài viết review
+            </p>
+        </b-TAG>
+
+        <strong-TAG>
+            <h3>Thẻ strong</h3>
+            <p>
+                * strong: tương tự b, nhưng strong ảnh hưởng đến SEO.
+                * thể hiện mức độ nghiêm trọng, khẩn cấp của nội dung.
+                * các thẻ strong có thể được lồng trong các thẻ strong khác
+            </p>
+        </strong-TAG>
+
+        <em-TAG>
+            <h3>Thẻ em</h3>
+            <p>
+                * em: dùng để biểu thị các từ được lên giọng trong lời nói.
+            </p>
+        </em-TAG>
+
+        <dl-TAG id="danh sách mô tả">
+            <p>
+                * dl: liệt kê danh sách mô tả.
+                * They should be used to mark up any kind of name-value pairs, including terms and definitions, metadata
+                topics and values, and questions and answers.
+            </p>
+        </dl-TAG>
+
+        <details-TAG>
+            <h3>thẻ details</h3>
+            <p>
+                * details: dánh dấu một phần tài liệu bị ẩn đi nhưng có thể mở rộng để hiển thị thông tin bị ẩn.
+            </p>
+            <details>
+                <summary>to do list</summary>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                </ul>
+            </details>
+        </details-TAG>
+        <ol-TAG>
+            <h3>Thẻ ol với các thuộc tính mới</h3>
+            <ol start="10" reversed>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ol>
+        </ol-TAG>
+
+        <small-TAG>
+            <h3>Thẻ small</h3>
+            <p>
+                *small: được sử dụng để wrap các đoạn văn bản ngắn,
+                là thông tin trong footer, các điều khoản.
+                * ví dụ: wrap thông tin bản quyền trong phần chân trang:
+                <small>&copy; SitePoint Pty. Ltd.</small>
+            </p>
+        </small-TAG>
+
+        <cite-TAG>
+            <h3>Thẻ cite</h3>
+            <p>
+                * cite: chứa nguồn gốc của một tác phẩm, một trích dẫn.
+                * ví dụ chứa tên tác giả, tên tổ chức, URL tham chiếu.
+
+            </p>
+        </cite-TAG>
+    </section>
+
+    <form id="form-tag" action="" method="get" enctype="multipart/form-data" enctype="application/x-www-form-urlencoded"
+        enctype="text/plain">
+        *Attribute:
+        - enctype: mã hóa dữ liệu submit lên sever, mặt định là text/plain.
+        khi gửi dữ liệu là file thì enctype="multipart/form-data".
+        Khi gửi dữ liệu là 1 url thì enctype="application/x-www-form-urlencoded".
+        - type: xác định loại thẻ input
+        - required: các input bắt buộc phải gáng giá trị.
+        - placeholder:
+        - pattern: cung cấp 1 biểu thức chính quy mà giá trị input phải khớp với pattern
+        thì mới coi là hợp lệ.
+        - title:
+        - disabled: thuộc tính vô hiệu hóa, có thể áp dụng cho tất cả các phần tử html
+        ngoại trừ phần tử output. Nó không cho người dùng focus và giá trị không được submit lên server.
+        - readonly: giống disabled nhưng cho phép focus và giá trị của nó được submit lên server.
+        -multiple: cho phép nhiều giá trị được nhập như file, email,
+        range input, phần tử select.
+        -autocomplete : hiển thị 1 danh sách gợi ý các giá trị đã nhập(mặc đinh).
+        Để tắt tính năng này sử dụng autocomplete="off".
+        -list: thuộc tính của text input, giá trị là 1 id của một datalist cung cấp một danh sách chọn lựa các giá trị.
+        - autofocus: element sẽ được focus ngay khi tải trang.
+        - contenteditable: nội dung của phần tử có thể chỉnh sửa.
+        - wrap: thuộc tính của textarea, value="soft|hard". nếu hard cần chỉ định một cols.
+        * element:
+        - optgroup: nhóm các option trong 1 optgroup, 1 optgroup có thể là con của optgroup khác.
+        - textarea:
+
+        <fieldset>
+            <legend>nhóm các input liên quan vào 1 fieldset</legend>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            <label for="name">name</label>
+
+            <input type="email" name="mail" id="mail" placeholder="Enter your email" required>
+            <label for="mail">email</label>
+
+            <input type="password" name="pasword" id="password" pattern="\S{6}"
+                placeholder="6 ký tự không bao gồm khoản trắng">
+            <label for="password">password</label>
+
+            <input type="tel" name="tel" id="tel" required>
+            <label for="tel">tel</label>
+
+            <input type="color" name="color" id="color">
+            <label for="color">color</label>
+
+            <input type="date" name="data" id="data">
+            <label for="data">data</label>
+
+            <input type="datetime" name="datetime" id="datetime">
+            <label for="datetime">datetime</label>
+
+            <input type="file" name="file" id="file" accept="image/png, image/jpeg">
+            <label for="file">file hình ảnh</label>
+
+            <input type="file" name="files" id="files" multiple
+                accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <label for="files"> các files tài đính kèm</label>
+
+            <label for="favcolor">Favorite Color</label>
+            <input type="color" list="colors" id="favcolor" name="favcolor">
+            <datalist id="colors">
+                <option value="#0000FF" label="blue">
+                <option value="#008000" label="green">
+                <option value="#ff0000" label="red">
+                <option value="#663399" label="RebeccaPurple">
+            </datalist>
+
+            
+        </fieldset>
+        <input type="submit" value="submit">
+    </form>
+
+    <form action="get">
+        <input type="text" value="sâsa" readonly>
+        <input type="submit" value="dđ">
+    </form>
+    <form action="get">
+        <input type="range" name="" id="" min="10" max="100" value="0,100" multiple>
+        <input type="submit" value="dđ">
+        <select name="" id="" multiple>
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+            <option value="e">e</option>
+        </select>
+    </form>
+
+    <h4>********************************************************************************************</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main>
+        <section id="html-tag">
+            <article id="list-ul">
+                <!-- contentEditable không thể truy cập trong tất cả các trình duyệt theo mặc định, vì vậy chúng ta cần cung cấp ngữ nghĩa để khắc phục điều đó. -->
+                <h4 contenteditable role="textbox">danh sách không có thứ tự dùng thẻ "ul>li" </h4>
+                <ul>
+                    <li>sa</li>
+                    <li>sa</li>
+                    <li>sa</li>
+                    <li>sa</li>
+                    <li>sa</li>
+                </ul>
+            </article>
+
+            <article id="list-ol">
+                <h4>danh sách có thứ tự dùng thẻ "ol>li" </h4>
+                <ol>
+                    <li>sa</li>
+                    <li>sa</li>
+                    <li>sa</li>
+                    <li>sa</li>
+                    <li>sa</li>
+                </ol>
+            </article>
+
+            <article id="list-dl">
+                <h4>danh sách mô tả</h4>
+                <p> <mark> Mục đích của danh sách này là để đánh dấu một tập hợp các mục và các mô tả liên quan của
+                        chúng,
+                        chẳng hạn như các thuật ngữ và định nghĩa, hoặc câu hỏi và câu trả lời</mark>. Hãy xem xét một
+                    ví dụ về một tập hợp các thuật ngữ và định nghĩa:</p>
+                <dl>
+                    <dt>soliloquy</dt>
+                    <dd>In drama, where a character speaks to themselves, representing their inner thoughts or feelings
+                        and in the process relaying them to the audience (but not to other characters.)</dd>
+                    <dt>monologue</dt>
+                    <dd>In drama, where a character speaks their thoughts out loud to share them with the audience and
+                        any other characters present.</dd>
+                    <dt>aside</dt>
+                    <dd>In drama, where a character shares a comment only with the audience for humorous or dramatic
+                        effect. This is usually a feeling, thought, or piece of additional background information.</dd>
+                </dl>
+            </article>
+
+            <article id="">
+                <h4>Quote</h4>
+                <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+                    <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+                            Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+                </blockquote>
+
+                <p>The quote element — <code>&lt;q&gt;</code> — is <q
+                        cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+                        for short quotations that don't require paragraph breaks.</q> -- <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+                        <cite>MDN q page</cite></a>.</p>
+            </article>
+
+            <article>
+                <h4>viết tắt</h4>
+                <p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+            </article>
+
+            <article>
+
+            </article>
+
+        </section>
+
+        <section id="emphasis">
+            <h2>Emphasis and importance</h2>
+            <!-- Khi chúng ta muốn thêm sự nhấn mạnh trong ngôn ngữ nói, chúng ta nhấn mạnh một số từ nhất định, thay đổi một cách tinh tế ý nghĩa của những gì chúng ta đang nói. Tương tự, trong ngôn ngữ viết, chúng ta có xu hướng nhấn mạnh các từ bằng cách đặt chúng in nghiêng. -->
+            <p>I am <em>glad</em> you weren't <em>late</em>.</p>
+
+            <!-- Để nhấn mạnh những từ quan trọng, chúng ta có xu hướng nhấn mạnh chúng trong ngôn ngữ nói và in đậm chúng bằng ngôn ngữ viết. Ví dụ: -->
+            <p>This liquid is <strong>highly toxic</strong>.</p>
+            <p>I am counting on you. <strong>Do not</strong> be late!</p>
+
+            <h1>Important notice</h1>
+            <p>On <strong>Sunday January 9th 2010</strong>, a gang of <em>goths</em> were spotted stealing
+                <strong><em>several</em>garden
+                    gnomes</strong> from a shopping center in downtown <strong>Milwaukee</strong>. They were all
+                wearing <em>green jumpsuits</em> and <em>silly hats</em>, and seemed to be having a whale of a time. If
+                anyone has <strong>any</strong> information about this incident, please contact the police
+                <strong>now</strong>.</p>
+
+
+            &lt;i&gt; <i>được sử dụng để truyền đạt một ý nghĩa truyền thống được in nghiêng: từ nước ngoài, chỉ định
+                phân loại, thuật ngữ kỹ thuật, một ý nghĩ ...</i> <br>
+            &lt;b&gt; <b> được sử dụng để truyền đạt một ý nghĩa truyền thống được in đậm: Từ khóa, tên sản phẩm, câu
+                dẫn ...</b> <br>
+            &lt;u&gt; <u> được sử dụng để truyền đạt một ý nghĩa truyền thống được truyền đạt bằng cách gạch chân: Tên
+                đúng, sai chính tả ...</u> <br>
+        </section>
+
+        <section id="hyperlinks">
+            <h2>hyperlinks</h2>
+
+            <div>
+                <p><a href="mailto:trungcuqn@gmail.com">trung cu mail</a></p>
+                <a href="tel:+0778013421">0778013421</a>
+
+                <a href="https://www.freetutorials.us" target="_blank"
+                    title="bạn thấy dòng này khi bạn di chuột vào liên kết" hreflang="en" media="screen"
+                    ping="đây là nơi đặt url, Khi người dùng nhấp vào siêu liên kết, thuộc tính ping sẽ gửi yêu cầu POST HTTP ngắn đến URL được chỉ định.">liên
+                    kêt sẽ mở trong tab mới. <mark> [hreflang="en"]</mark> thể hiên trang sắp mở có html[lang="en"]</a>
+            </div>
+
+            <div>
+                <a href="#" rel="alternate">Provides a link to an alternate representation of the document (i.e. print
+                    page, translated or mirror)</a>
+                <a href="#" rel="author">chỉ định liên kết đến tác giả của trang</a>
+
+                <a href="#" rel="bookmark"></a><br>
+                <a href="#" rel="external"></a><br>
+                <a href="#" rel="help"></a><br>
+                <a href="#" rel="license"></a><br>
+                <a href="#" rel="next"></a><br>
+                <a href="#" rel="nofollow"></a><br>
+                <a href="#" rel="noreferrer"></a><br><br>
+                <p>
+                    <a href="/run-javascript.html" target="_blank">khi mo trang trong tab mới <strong>bởi</strong>
+                        a[target="_blank"] trong khoảng thời gian
+                        trang loading thì thead javascipt của new tab sử dụng <strong>chung</strong> thead javascript
+                        của
+                        tab hiện tại cho đến khi trang tải và thực thi song javascipt. để xác định xác định bạn có thể
+                        select các dòng chữ.</a>
+                </p>
+                <p>
+                    <a href="/run-javascript.html" rel="noopener" target="_blank">sử dụng rel="noopener" để chỉ định
+                        một thead javascript <strong>khác</strong> cho tab được mở bỏi target="_blank"</a>
+                </p>
+
+                <a href="#" rel="prev"></a><br>
+                <a href="#" rel="search"></a><br>
+                <a href="#" rel="tag"></a><br>
+
+            </div>
+
+            <div>
+                <a href="/img/2.jpg" download="tên-file-bạn-muốn-lưu-khi-download"
+                    title="bạn thấy dòng này khi bạn di chuột vào liên kết">liên
+                    kết tải về một file và chỉ định tên file khi lưu, dùng <mark>a[download]</mark> </a>
+
+            </div>
+
+            <div>
+                <iframe style="background: red" src="/iframe2.html" width="100%" height="200" frameborder="0"></iframe>
+            </div>
+
+
+        </section>
+
+        <section id="file-path">
+            <h2>HTML | File Paths</h2>
+            <p>file path: chỉ định vị trí của tệp trong cấu trúc thư mục web.</p>
+            <p>Đường dẫn tệp có hai loại:</p>
+            <ol>
+                <li>Đường dẫn tệp tuyệt đối: mô tả địa chỉ đầy đủ (URL) để truy cập tệp:
+                    src="http://127.0.0.1:5500/img/1.jpg"</li>
+                <li>Đường dẫn tệp tương đối: mô tả đường dẫn của tệp liên quan đến vị trí của tệp trang web hiện tại.
+                    <ul>
+                        <li>đường dẫn của tệp có trong cùng một thư mục của tệp trang web hiện tại:
+                            <p>src="img/1.jpg"</p>
+                        </li>
+                        <li>đường dẫn của tệp có trong một thư mục phía trên thư mục của tệp trang web hiện tại:
+                            <p>src="../img/1.jpg"</p>
+                        </li>
+                        <li> đường dẫn của tệp từ thư mục gốc:
+                            <p>src="/img/1.jpg"</p>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section id="image">
+            <h2>Image</h2>
+            sử dụng thẻ img
+            <img src="/img/flamingo-fallback.jpg" alt="">
+            <hr>
+            <p>sử dụng thẻ img vơi <strong>srcset</strong> hình ảnh được chọn dựa vào chỉ số <strong>divece pixel ratio
+                    <abbr title="divece pixel ratio ">(DPR)</abbr></strong> của thiết bị</p>
+            <img src="/img/flamingo-fallback.jpg" alt=""
+                srcset="/img/1.jpg 1x, /img/1.jpg 2x, /img/1.jpg 3x, /img/4.jpg 4x">
+            <hr>
+            <p>sử dụng thẻ img vơi <strong>srcset + sizes </strong>hình ảnh được chọn dựa vào việc lần lược lấy các kính
+                thước thật của hình ảnh (được khái báo kèm theo trong srcset) đêm chia cho kích thước mà hình ảnh sẽ
+                hiển thị trên màng hình thiết bị (được khái báo bên trong thuộc tính sizes), tạm gọi các chỉ số này là
+                S. Lấy S so sánh với chỉ số <abbr title="divece pixel ratio ">DPR</abbr> của thiết bị để chọn hình ảnh
+                tối ưu</p>
+            <img src="/img/flamingo-fallback.jpg" alt="" sizes="(max-width:500) 200,(max-width: 700) 500, 800"
+                srcset="/img/1.jpg 200w, /img/2.jpg 600w, /img/3.jpg 900w, /img/4.jpg 1000w">
+            <hr>
+            sử dụng thẻ img vơi <strong>srcset + sizes</strong>
+            <img src="/img/flamingo-fallback.jpg" alt="" sizes="(max-width:700) 500,(max-width: 500) 200, 800"
+                srcset="/img/1.jpg 200w, /img/2.jpg 600w, /img/3.jpg 900w, /img/4.jpg 1000w">
+
+            <picture>
+                <source sizes="" srcset="" type="image/">
+            </picture>
+
+        </section>
+
+        <section id="audio-video">
+            <h2>Audio và Video</h2>
+            <article id="audio">
+                <div>
+                    <h3>Audio file formats</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>file format</th>
+                                <th>file extention</th>
+                                <th>mô tả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AIFF</td>
+                                <td>.aiff</td>
+                                <td> được phát triển bởi Apple
+                                    Là định dạng không nén và không mất dữ liệu,
+                                    nó sử dụng nhiều dung lượng đĩa hơn định dạng MP3</td>
+                            </tr>
+                            <tr>
+                                <td>AU</td>
+                                <td>.au</td>
+                                <td>Định dạng âm thanh tiêu chuẩn được sử dụng bởi Sun, Unix và Java
+                                    Có thể nén</td>
+                            </tr>
+                            <tr>
+                                <td>MIDI</td>
+                                <td>.midi .rmi>
+
+                                </td>
+                                <td>Giới hạn đối với các nhạc cụ điện tử (như nhạc cụ điện tử) và các thiết bị điện tử
+                                    khác
+                                    Các tập tin có thể nhỏ hơn nhiều so với các định dạng khác</td>
+                            </tr>
+                            <tr>
+                                <td>MP3</td>
+                                <td>.mp3</td>
+                                <td>Một trong những định dạng phổ biến nhất để lưu trữ nhạc
+                                    Nén les đến khoảng một phần mười kích thước của les không nén</td>
+                            </tr>
+                            <tr>
+                                <td>MP4</td>
+                                <td>.mp4</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Ogg</td>
+                                <td>.ogg</td>
+                                <td>Được thiết kế để cung cấp cho truyền phát trực tuyến hiệu quả và đa phương tiện kỹ
+                                    thuật số
+                                    chất lượng cao
+                                    Có thể được sử dụng với yếu tố âm thanh</td>
+                            </tr>
+                            <tr>
+                                <td>RealAudio</td>
+                                <td>.ra .ram</td>
+                                <td>Được thiết kế để truyền phát âm thanh qua Internet; không tốt như các định dạng
+                                    khác</td>
+                            </tr>
+                            <tr>
+                                <td>WAV</td>
+                                <td>.wav</td>
+                                <td>Định dạng âm thanh tiêu chuẩn cho Windows
+                                    Thường được sử dụng để lưu trữ les âm thanh chất lượng CD không nén</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Audio element</h3>
+                    <audio controls="controls" autoplay="autoplay">
+                        <source src="music.mp3" type="audio/mp3">
+                        <p>Your browser does not support the HTML5 audio element.</p>
+                    </audio>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Nội dung phổ biến được tìm thấy trong phần chân trang web bao gồm thông tin bản quyền, thông tin liên lạc, và các liên kết trang. -->
+    <footer>
+        <h2>phần chân trang, nó chứa thông tin bản quyền, liên hệ, tác giả, ....</h2>
+        <div id="address">
+            <h4>address</h4>
+            <p>Xác định thông tin liên hệ của tác giả (hoặc chủ sở hữu) trang web:</p>
+            <address>
+                <p>trang được tạo bởi: <a href="../authors/trcu/">Lê Trung Cư/a>.</p>
+                <p>Địa chỉ: xxx, xxx, xxx</p>
+            </address>
+        </div>
+    </footer>
+</body>
+
+</html>

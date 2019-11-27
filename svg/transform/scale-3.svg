@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="100" viewBox="-10 -90 900 100">
+<!--<rect width="200" height="100" />-->
+    <defs>
+        <linearGradient id="fadeGray" x2="0%" y2="100%">
+            <stop offset="0" stop-color="gray" stop-opacity="0"/>
+            <stop offset="1" stop-color="gray" stop-opacity="1"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <use xlink:href="#text" fill="url(#fadeGray)" transform="skewX(-45) scale(1, .7)" />
+        <g fill="green">
+        <text id="text" stroke-width="3" font-size="130">
+            SVG
+        </text>
+        </g>
+        
+    </g>
+</svg>

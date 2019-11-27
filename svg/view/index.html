@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+font-family: serif;
+background-color: #CDF;
+}
+figure {
+padding: 0;
+margin: 0;
+}
+.icon {
+width: 1em;
+height: 1em;
+}
+.icon.big {
+width: 4em;
+height: 4em;
+}
+.icon.float {
+display: block;
+float: left;
+clear: left;
+margin: 0 0.5em 0.5em 0;
+padding: 0.2em;
+border: gray solid thin;
+background-color: white;
+}
+.icon.inline {
+display: inline;
+vertical-align: middle;
+padding: 0.1em;
+}
+    </style>
+</head>
+<body>
+    <h2>Card suits</h2>
+    <svg>
+        <use xlink:href="suits-views.svg#view"></use>
+    </svg>
+<figure role="img" aria-label="The four card suits">
+<img class="icon float big" src="suits-views.svg#spade">
+<img class="icon float big" src="suits-views.svg#heart">
+<img class="icon float big" src="suits-views.svg#club">
+<img class="icon float big" src="suits-views.svg#diamond">
+</figure>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- Some points to consider when using nested SVGs:
+• If you don’t include a viewBox, a default coordinate system is
+created in which the length of the user units is the same as for
+the parent SVG. However, the origin is reset to the top-left cor‐
+ner of the nested SVG (defined by x and y) and percentages are
+reset to use the nested SVG’s width and height.
+• If the parent SVG used preserveAspectRatio= "none", the
+vertical and horizontal units used to establish the new coordi‐
+nate system may not be equal. The aspect ratio of the new coor‐
+dinate system will be evaluated according to the length in parent
+units, not according to the actual displayed aspect ratio.
+In other words, it is impossible to “reset” aspect ratio control
+once it has been turned off.
+• By default, any content that extends outside the width and
+height of the nested <svg> will be clipped. You can change this
+behavior by setting the CSS overflow property (or presentation
+attribute) to visible. -->

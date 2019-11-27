@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="1200" viewBox="0 0 400 1200">
+    <filter id="filter-btn-5" filterUnits="objectBoundingBox">
+        <feComponentTransfer>
+            <feFuncR tableValues="0 .5 1" type="discrete"/>
+            <feFuncG tableValues="0 .5 1" type="discrete"/>
+            <feFuncB tableValues="0 .55 1" type="discrete"/>
+        </feComponentTransfer>
+    </filter>
+        
+    <filter id="filter-btn-5--1" filterUnits="objectBoundingBox">
+        <feColorMatrix type="matrix" values=".33 .33 .33 0 0
+            .33 .33 .33 0 0
+            .33 .33 .33 0 0
+            0   0   0   1  0">
+            
+        </feColorMatrix>
+    </filter>
+    <image width="300" height="300" x="50" y="0" filter="url(#filter-btn-5)" xlink:href="/img/11.jpg"/>
+
+    <image width="300" height="300" x="50" y="400" filter="url(#filter-btn-5--1)" xlink:href="/img/11.jpg"/>
+</svg>

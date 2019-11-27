@@ -1,0 +1,5 @@
+<!-- Defining a coordinate system means setting the origin
+point, establishing the size of a user unit, and determining the
+meaning of 100% width or height. All of these are set with the pow‐
+erful viewBox attribute we’ve already mentioned multiple times.
+Other attributes control the size and alignment. -->

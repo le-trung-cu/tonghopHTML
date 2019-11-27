@@ -1,0 +1,28 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+    <defs>
+         <path id="path-of-text" d="M 50 250 a 200 200 1 1 1 400 0 a 200 200 1 1 1 -400 0"/>
+         <linearGradient id="shadow" x2="0" y2="100%">
+             <stop stop-color="gray" offset="0" stop-opacity="0"/>
+             <stop stop-color="gray" offset="1" stop-opacity="1"/>
+         </linearGradient>
+    </defs>
+    <style>
+    text{
+        text-transform: uppercase; 
+    }
+    </style>
+    <text font-size="26" font-weight="900" letter-spacing="10" stroke="yellowgreen" stroke-width="1" fill="#6b1515ff">
+        <textPath xlink:href="#path-of-text">
+        Lorem ipsum dolor sit amet consectetur 
+        </textPath>
+    </text>
+    <g transform="translate(70, 250)">
+        <use xlink:href="#text-main" fill="url(#shadow)" transform="skewX(-45) scale(1, .7)" aria-hidden="true" pointer-events="none"/>
+        <g fill="teal" >
+            <text id="text-main"  font-size="35" font-weight="900" letter-spacing="13">
+            Lorem ipsum 
+            </text>
+        </g>
+    </g>
+</svg>

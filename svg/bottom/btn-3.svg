@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 400" height="400" width="400">
+    <filter id="filter-btn-3" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="130%" height="120%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"></feGaussianBlur>
+        <feFlood flood-color="red" fill-opacity=".8" result="blurColor"></feFlood>
+        <feComposite in="blurColorr" in2="blur" operator="in" ></feComposite>
+        <feMorphology operator="dilate || erode" radius="4" result="dropShodow">
+            
+        </feMorphology>
+ <feOffset dx="20" dy="20" result="DROPSHADOWOffset"></feOffset>
+        <feMerge>
+            <feMergeNode in="DROPSHADOWOffset"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+    </filter>
+<image xlink:href="/img/1.jpg" x="50" y="50" width="200" height="250" filter="url(#filter-btn-3)">
+    
+</image>
+</svg>

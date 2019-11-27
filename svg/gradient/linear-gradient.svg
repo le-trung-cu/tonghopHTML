@@ -1,0 +1,41 @@
+<svg class="gradient" width="250" height="150" viewBox="0 0 250 150">
+<!--<svg class="gradient" width="125" height="75" viewBox="0 0 125 75">-->
+  <defs>
+<linearGradient id="grd" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="objectBoundingBox">
+        <stop offset="0%" stop-color="hsl(120,100%,30%)"/>
+        <stop offset="50%" stop-color="white"/>
+        <stop offset="100%" stop-color="hsl(320,100%,50%)"/>
+</linearGradient>
+<linearGradient id="grd1" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="hsl(120,100%,30%)"/>
+        <stop offset="50%" stop-color="white"/>
+        <stop offset="100%" stop-color="hsl(320,100%,50%)"/>
+</linearGradient>    
+
+
+<linearGradient id="grd" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="objectBoundingBox">
+        <stop offset="0%" stop-color="hsl(120,100%,30%)"/>
+        <stop offset="50%" stop-color="white"/>
+        <stop offset="100%" stop-color="hsl(320,100%,50%)"/>
+</linearGradient>
+<linearGradient id="grd1" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="hsl(120,100%,30%)"/>
+        <stop offset="50%" stop-color="white"/>
+        <stop offset="100%" stop-color="hsl(320,100%,50%)"/>
+</linearGradient>   
+
+<linearGradient id="metal" spreadMethod="repeat"
+gradientTransform="scale(0.7) rotate(75)">
+<stop stop-color="#808080" offset="0"/>
+<stop stop-color="#404040" offset="0.25"/>
+<stop stop-color="#C0C0C0" offset="0.35"/>
+<stop stop-color="#808080" offset="0.5"/>
+<stop stop-color="#E0E0E0" offset="0.7"/>
+<stop stop-color="#606060" offset="0.75"/>
+<stop stop-color="#A0A0A0" offset="0.9"/>
+<stop stop-color="#808080" offset="1"/>
+</linearGradient>
+
+
+ </defs>
+</svg>

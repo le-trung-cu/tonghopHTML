@@ -1,0 +1,16 @@
+/* .menu-box {
+    display: none;
+
+}
+
+input[name="menu"]:checked ~ .menu-box  {
+    display: block;
+} */
+
+#img-include-css--1 {
+    background-image: url(../img/cards-design-2.jpg);
+}
+
+#img-include-css--2 {
+    background-image: url(/src/img/cards-design-1.jpg);
+}

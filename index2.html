@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="0" height="0">
+        <path id="icon-search" d="M 69.902,72.704 58.967,61.769 c -2.997,1.961 -6.579,3.111 -10.444,3.111 -10.539,0 -19.062,-8.542 -19.062,-19.081 0,-10.519 8.522,-19.061 19.062,-19.061 10.521,0 19.06,8.542 19.06,19.061 0,3.679 -1.036,7.107 -2.828,10.011 l 11.013,11.011 c 0.583,0.567 0.094,1.981 -1.076,3.148 l -1.64,1.644 c -1.17,1.167 -2.584,1.656 -3.15,1.091 z M 61.249,45.799 c 0,-7.033 -5.695,-12.727 -12.727,-12.727 -7.033,0 -12.745,5.694 -12.745,12.727 0,7.033 5.712,12.745 12.745,12.745 7.032,0 12.727,-5.711 12.727,-12.745 z" />
+    </svg>
+    <header>
+        <div>
+            <h1>Phimmoi.net</h1>
+            <h2>Xem phim mới chất lượng cao</h2>
+        </div>
+        <form action="search" method="get">
+            <input type="search" name="k" placeholder="tìm: tên phim, đạo diễn, diễn viên">
+            <svg class="icon" viewBox="0 0 79 79">
+                <use xlink:href="#icon-search"></use>
+            </svg>
+        </form>
+        <div>
+            <a href="#">Đăng ký</a>
+            <a href="#">Đăng nhập</a>
+            <a href="#">Đăng nhập bằng Facebook</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Phim mới</a></li>
+            <li>
+                <a href="#">thể loại</a>
+                <ul>
+                    <li><a href="#">ssss</a></li>
+                    <li><a href="#">ssss</a></li>
+                    <li><a href="#">ssss</a></li>
+                    <li><a href="#">ssss</a></li>
+                    <li><a href="#">ssss</a></li>
+                </ul>
+            </li>
+            <li><a href="#">quốc gia</a></li>
+        </ul>
+    </nav>
+
+    <section id="microdata">
+        <h2>microdata thêm ngữ nghĩa vào html</h2>
+        <div>
+            <h3>Mô tả một bộ phim</h3>
+            <figure itemscope itemtype="https://schema.org/Movie">
+                <img itemprop="image" src="http://image.phimmoi.net/film/7149/poster.thumb.jpg" alt="" width="200px">
+                <figcaption>
+                    <h3 itemprop="name">SLIME CHUYỂN SINH</h3>
+                    <p>That Time I Got Reincarnated as a Slime</p>
+                    <span itemprop="dateCreated" content="2018"></span>
+                    <span itemprop="director" content="..."></span>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="form">
+
+        <form action="" method="get">
+            <fieldset>
+                <legend>fieldset > legend</legend>
+
+                <fieldset>
+                    <legend>input:name="radio"</legend>
+                    <p>
+                        <label for="radio1">radio 1</label>
+                        <input type="radio" name="radio" id="radio1" checked>
+                    </p>
+                    <p>
+                        <label for="radio2">radio 2</label>
+                        <input type="radio" name="radio" id="radio2">
+                    </p>
+                </fieldset>
+                <p>
+                    <label for="search">Search</label>
+                    <input type="search" name="s" id="search">
+                </p>
+
+
+                <div><input type="color" name="color" id="color"></div>
+
+                <div><input type="date" name="" id=""></div>
+                <div><input type="datetime" name="" id=""></div>
+                <div><input type="datetime-local" name="" id=""></div>
+
+                <div><input type="month" name="" id=""></div>
+                <div><input type="number" name="" id=""></div>
+                <div><input type="week" name="" id=""></div>
+
+            </fieldset>
+        </form>
+        <form action="" method="post" enctype="application/x-www-form-urlencoded">
+            <h3>submit dữ liệu text</h3>
+            <mark>enctype="application/x-www-form-urlencoded": dữ liệu được mã hóa giống cách mã hóa URL <br>enctype
+                luôn kèm với method="post"</mark>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" autofocus>
+            <input type="submit" value="submit">
+        </form>
+        <form action="" method="post" enctype="multipart/form-data">
+            <h3>submit một file</h3>
+            <mark>enctype="multipart/form-data": dữ liệu file được mã hóa từng phần, chỉ định nó để có thể submit 1
+                file</mark>
+            <p>
+                <label for="file">chỉ có thể chấp nhận 1 file</label>
+                <input type="file" name="file" id="file">
+            </p>
+
+            <p>
+                <label for="files">có thể chấp nhận nhiều file (sử dụng multiple)</label>
+                <input type="file" name="files" id="files" multiple>
+            </p>
+
+            <p>
+                <label for="file-type">Chỉ chấp nhận file kiểu ảnh :
+                    accept="file_extension|audio/*|video/*|image/*|media_type"
+                    <input type="file" name="file-type" id="file-type" accept="image/*">
+            </p>
+
+            <input type="submit" value="submit">
+        </form>
+        <form action="" method="post" enctype="text/plain">
+        </form>
+    </section>
+
+    <section id="image-reponsi">
+        <img src="/img/1.jpg" alt="ewewe">
+        <figure>
+            <img src="/img/1.jpg" alt="alt của img" sizes="(max-width: 365px) 100px, (max-width: 800px) 400px, (max-width: 900px) 500px"
+                srcset="/img/1.jpg 2000w, /img/2.jpg 1600w, /img/3.jpg 400w">
+            <figcaption>responsive dùng tag img srcset của thẻ img: <mark>trình duyệt dựa vào DPR để xác định ảnh tối ưu</mark> </figcaption>
+        </figure>
+
+        <figure>
+            <picture>
+                <source srcset=" /img/3.jpg" media="(max-width: 365px)">
+                <source srcset="/img/bg-about.jpg" media="(max-width: 800px)">
+                <source srcset="/img/bg-stats.jpg" media="(max-width: 900px)">
+                <img src="/img/2.jpg" alt="dsdsd">
+            </picture>
+            <figcaption>responsive dùng tag picture: <mark>trình duyệt dựa vào chiều rộng thiết bị để xác định ảnh tối ưu</mark> </figcaption>
+
+        </figure>
+        <figure>
+            <picture>
+                <source srcset="/img/3.jpg, /img/bg-about.jpg, /img/bg-stats.jpg" media="(max-width: 365px), (max-width: 800px), (max-width: 900px)">
+                <img src="/img/2.jpg" alt="">
+            </picture>
+            <figcaption>responsive dùng tag picture: <mark>trình duyệt dựa vào chiều rộng thiết bị để xác định ảnh tối ưu</mark> </figcaption>
+        </figure>
+    </section>
+
+
+</body>
+
+</html>

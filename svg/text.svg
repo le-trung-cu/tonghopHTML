@@ -1,0 +1,26 @@
+<!--<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" width="500" height="80">-->
+<!--x, y la baseline. svg khong wrap text-->
+<!--<text x="1em" y="60" font-size="64" font-weight="bold" font-family="Brush Script MT, Brush Script, Segoe Script, cursive"> Some test SVG Text </text> </svg>-->
+
+<!--<svg xmlns="http://www.w3.org/2000/svg" width="500" height="800" xml:lang="en"> <title> Sample SVG text, style with CSS </title> <style> text { font-family: Brush Script MT, Brush Script, Segoe Script, cursive; font-size: 64px; font-weight: bold; } </style> <text x="1em" y="60" fill="red" stroke="green" stroke-width="3"> Some Test SVG text </text> </svg>-->
+
+
+<!-- preserveAspectRatio
+There are three possible ways the SVG could scale to fit within this
+mismatched space:
+• The SVG graphic is contorted—stretched or squeezed—to fit
+the available aspect ratio.
+• The whole graphic is fit within the available space, with every‐
+thing in the right proportions, but with extra blank areas filling
+the too-large dimension.
+• The graphic is scaled to completely fill the space without leaving
+anything blank, but some parts of the graphic get cut off in the
+too-small direction. -->
+
+
+<!-- The text-anchor attribute is used to align (start-, middle- or end-alignment) a string of text relative to a given point. -->
+
+shape-outside:
+    margin-box: 
+        Defines the shape enclosed by the outside margin edge. The corner radii of this shape are determined by the corresponding border-radius and margin values. If the border-radius / margin ratio is 1 or more, then the margin box corner radius is border-radius + margin. If the ratio is less than 1, then the margin box corner radius is border-radius + (margin * (1 + (ratio-1)^3)).
+    

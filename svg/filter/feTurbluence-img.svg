@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 500 500"  width="500" height="500" xml:lang="en">
+<style>
+    image:hover{
+filter:url(#filter-img);
+    }
+</style>
+    <filter id="filter-img" filterUnits="userSpaceOnUse" width="200%"> 
+        <feTurbulence x="200" y="200" baseFrequency=".01" id="noise">
+            <animate attributeName="baseFrequency" dur="5s" values=".01 .2; .02 .2" repeatCount="indefinite"/>
+        </feTurbulence>
+
+        <feDisplacementMap in="SourceGraphic" in2="noise"  scale="10" xChannelSelector="R" yChannelSelector="R"/>
+
+    </filter>
+    <image x="100" y="100" width="100%" height="100%"  xlink:href="/img/1.jpg"/>
+   <!-- <image width="100%" height="100%" xlink:href="/img/1.jpg" filter="url(#filter-img)"/> -->
+    <text x="150" y="150" fill="red" font-size="20" filter="url(#filter-img)">
+        sasas aas
+    </text>
+</svg>

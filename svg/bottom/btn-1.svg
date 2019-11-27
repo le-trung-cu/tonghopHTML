@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="lynskey" width="1000px" height="586px" xml:lang="en">
+    <filter id="filter" width="250%" height="120%" filterUnits="objectBoundingBox">
+        <feOffset dx="290" dy="20" in="SourceAlpha"></feOffset>
+
+        <feGaussianBlur stdDeviation="10" result="DROP"></feGaussianBlur>
+
+        <feFlood flood-color="#000" flood-opacity=".9" result="COLOR"></feFlood>
+
+        <feComposite in="DROP" in2="COLOR" operator="in" result="SHADOW1"></feComposite>
+
+        <feComponentTransfer in="SHADOW1" result="SHADOW">
+                <feFuncA type="table" tableValues="0 0.5"></feFuncA>
+        </feComponentTransfer>
+
+        <feMerge>
+            <feMergeNode in="SHADOW"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+    </filter>
+    <image xlink:href="/img/1.jpg" x="0" y="0" width="100%" height="100%" filter="url(#filter)"></image>
+</svg>

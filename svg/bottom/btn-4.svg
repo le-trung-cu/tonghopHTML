@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 1200" height="1200" width="400">
+
+    <filter id="filter-btn-4--1">
+        <feMorphology operator="out" radius="1"></feMorphology>
+    </filter>
+    <filter id="filter-btn-4--4">
+        <feMorphology operator="in" radius="2"></feMorphology>
+    </filter>
+    <filter id="filter-btn-4--2">
+        <feMorphology operator="arithmetic" radius="3"></feMorphology>
+    </filter>
+    <filter id="filter-btn-4--3">
+        <feMorphology operator="atop" radius="4"></feMorphology>
+    </filter>
+    
+   
+    <image xlink:href="/img/1.jpg" x="50" y="310" width="300" height="300" filter="url(#filter-btn-4--2)"></image>
+    <image xlink:href="/img/1.jpg" x="50" y="620" width="300" height="300" filter="url(#filter-btn-4--3)"></image>
+    <image xlink:href="/img/1.jpg" x="50" y="930" width="300" height="300" filter="url(#filter-btn-4--4)"></image>
+     <image xlink:href="/img/1.jpg" x="50" y="0" width="300" height="300" filter="url(#filter-btn-4--1)">
+    </image>
+</svg>
